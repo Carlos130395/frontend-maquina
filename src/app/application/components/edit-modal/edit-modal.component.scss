@@ -1,0 +1,65 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); // Fondo semi-transparente
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Asegúrate de que esté por encima de otros elementos
+}
+
+.modal-content {
+  background: white; // Fondo blanco para el modal
+  padding: 20px;
+  border-radius: 8px; // Bordes redondeados
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Sombra para el modal
+  width: 400px; // Ancho del modal
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 24px; // Tamaño del título
+  text-align: center; // Centrar el texto
+}
+
+.form-group {
+  margin-bottom: 15px; // Espaciado entre los grupos de formulario
+}
+
+label {
+  display: block; // Hacer que las etiquetas ocupen toda la línea
+  margin-bottom: 5px; // Espacio debajo de la etiqueta
+}
+
+input[type="text"],
+select {
+  width: 100%; // Ancho completo
+  padding: 8px; // Espacio interno
+  border: 1px solid #ccc; // Borde gris claro
+  border-radius: 4px; // Bordes redondeados
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between; // Espaciado entre los botones
+  margin-top: 20px; // Espacio encima de los botones
+}
+
+button {
+  background-color: #007bff; // Color de fondo
+  color: white; // Color del texto
+  border: none; // Sin borde
+  padding: 10px 15px; // Espaciado interno
+  border-radius: 4px; // Bordes redondeados
+  cursor: pointer; // Cambiar cursor al pasar
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0056b3; // Color al pasar el cursor
+}

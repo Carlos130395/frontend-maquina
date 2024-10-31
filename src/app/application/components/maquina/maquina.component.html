@@ -1,0 +1,50 @@
+<div class="maquina-container">
+  <h2>Listado de Maquinas</h2>
+  <div class="header">
+    <input
+      type="text"
+      placeholder="Buscar..."
+      class="search-input"
+      [(ngModel)]="searchTerm"
+    />
+    <button class="btn btn-add" (click)="addMaquina()">Agregar Máquina</button>
+  </div>
+  <table class="maquina-table">
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Color</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let maquina of filteredMaquinas">
+        <td>{{ maquina.descripcion }}</td>
+        <td>
+          <span class="color-box" [style.background]="maquina.color"></span>
+        </td>
+        <td>{{ maquina.estado }}</td>
+        <td>
+          <button class="btn btn-edit" (click)="editMaquina(maquina.id)">
+            Editar
+          </button>
+          <button class="btn btn-delete" (click)="deleteMaquina(maquina.id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-modal
+    *ngIf="showModal"
+    (closeModal)="showModal = false"
+    (maquinaAgregada)="onMaquinaAgregada($event)"
+  ></app-modal>
+  <app-edit-modal
+    *ngIf="showEditModal"
+    [maquinasEditar]="maquinasEditar"
+    (maquinaActualizada)="loadMaquinas()"
+    (closeModal)="showEditModal = false"
+  ></app-edit-modal>
+</div>
